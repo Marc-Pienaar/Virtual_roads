@@ -25,7 +25,7 @@ Figure 3 illustrates the creation of the cost surface. Here, a cost surface (DEM
 1.	The slope is calculated from the DEM using the ‘gdaldem’ function and used as the cost surface. It is then converted into an array of values (NumPy array). Any values (the index of the values) corresponding to a slope value of less than 15 degrees are replaced by a NA or missing value.  
 2.	An ‘obstacle’ layer – hence, shapefiles that have various obstacle features, in this case water features are rasterised (with the GDAL rasterise function) using the cost surface as the grid template. The new raster is also converted to an array of values (0 for a pixel / feature value, NA or missing value otherwise), and similar to step 1 above any values (the index of the values) corresponding to an obstacle value (i.e. a value of 0) in the cost surface is replaced by a NA or missing value in the cost surface array. 
 
-![figure3](https://user-images.githubusercontent.com/50328370/115219386-c660ae80-a107-11eb-9856-968045882b6e.png)
+![figure3](https://user-images.githubusercontent.com/50328370/115219554-f14b0280-a107-11eb-93a1-428ce3ef76fa.png)
 **Figure 3**. Creation of the cost surface. A is an image from the SRTM v3 DEM for the ROI. B is the slope derived from A using the GDAL ‘gdaldem’ algorithm. C is a shapefile of water features (purple) with a Bing aerial image as a backdrop. D is the cost surface (slope) in B with the corresponding water features in C and any pixel with a slope value <15 degrees removed – the red lines represent the road layer for this area. 
 
 Creation of the source and destination points 
